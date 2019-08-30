@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="shortcut icon" href="./static/images/yabo.ico" />
+    <meta name="keywords" />
+    <meta name="viewport" content="width=750,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="./static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.qrcode.min.js"></script>
+    <script src="./static/js/base64.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      #official {
+        display: table-cell;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        vertical-align: middle;
+        background: url('./static/images/official_bg.png') repeat-x;
+        background-size: auto 100%;
+      }
+
+      .logo_corner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 145px;
+        height: 145px;
+      }
+
+      .main_header {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 0;
+      }
+
+      .offical_code {
+        display: inline-block;
+        vertical-align: top;
+        background-color: #fff;
+        margin-right: 22px;
+        padding: 10px;
+        font-size: 0;
+      }
+    </style>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-138682257-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() {
+        dataLayer.push(arguments);
+      };
+      gtag('js', new Date());
+      gtag('config', 'UA-138682257-2', { send_page_view: false });
+      setTimeout(function() {
+        window.gtag('config', 'UA-138682257-2', {
+          page_title: '下载页',
+          page_path: location.href
+        });
+      }, 500);
+    </script>
+  </head>
+
+  <body>
+    <div id="official">
+      <img src="./static/images/log_corner.png" class="logo_corner" />
+      <div class="main_header">
+        <div
+          class="offical_code"
+          id="offical_qrcode"
+          style="display: none"
+        ></div>
+        <img
+          style="margin-top: 7px"
+          src="./static/images/code_tip.png"
+          width="198px"
+          height="175px"
+        />
+      </div>
+      <img width="1126px" height="807px" src="./static/images/sports.png" />
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  $(function() {
+    document.title = Base64.decode('5Lqa5Y2a5L2T6IKy');
+    $("meta[name='keywords']").attr(
+      'content',
+      Base64.decode('5Lqa5Y2a77yM5LiW55WM5p2v77yM6Laz55CD6LWb')
+    );
+    // requestQrcodeUrl();
+      createQRCode("https://www.yb53.app")
+  });
+
+  function createQRCode(text) {
+    try {
+      var qrUrl = '';
+      qrUrl = text ? text : 'https://www.yabo206.com';
+      var i_code = 25614,r_code=25614;
+      if (i_code) {
+        qrUrl = qrUrl + '?i_code=' + i_code;
+      } else if (r_code) {
+        qrUrl = qrUrl + '?r_code=' + r_code;
+      }
+      $('#offical_qrcode').qrcode({
+        width: 152, //宽度
+        height: 152, //高度
+        text: qrUrl
+      });
+      $('#offical_qrcode').show();
+    } catch (e) {
+      $('#offical_qrcode').qrcode({
+        width: 152, //宽度
+        height: 152, //高度
+        text: qrUrl
+      });
+      $('#offical_qrcode').show();
+    }
+  }
+</script>
